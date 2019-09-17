@@ -4,10 +4,13 @@ const initialState = [
 ];
 
 const reducer = (state = initialState, action) => {
-    // Handle actions here - make sure you don't mutate the state!
     const { type } = action;
 
-    // Add a Name Tag
-
+    if (type === "ADD_NAMETAG") {
+        return [
+            ...state,
+            action.name
+        ]
+    }
     return state;
 }

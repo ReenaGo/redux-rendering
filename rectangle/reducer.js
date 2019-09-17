@@ -9,10 +9,30 @@ const reducer = (state = initialState, action) => {
     const { type } = action;
 
     // ACTION 1 - Increment height by 10
+    if (type === "INCREASE_HEIGHT") {
+        return {
+        width: state.width,
+        height: state.height + 10,
+        color: state.color
+        }
+    }
 
     // ACTION 2 - Increment width by 10
+    if (type === "INCREASE_WIDTH") {
+        return {
+        width: state.width + 10,
+        height: state.height,
+        color: state.color
+        }
+    }
 
-    // ACTION 3 - Change the color
+    if (type === "CHANGE_COLOR") {
+        return {
+        width: state.width,
+        height: state.height,
+        color: action.color
+        }
+    }
 
     return state;
 }
